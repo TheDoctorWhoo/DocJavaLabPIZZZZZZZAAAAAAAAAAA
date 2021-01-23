@@ -1,10 +1,9 @@
-package main.java.com.company;
+package com.company;
 
 import javafx.util.Pair;
-
 import java.util.ArrayList;
 
-public class Pizza {
+public class Pizza<pubilic> {
     private testoType testo;
     private ArrayList<Pair<String, Integer>> Ingredients;
     private Integer ves;
@@ -35,16 +34,36 @@ public class Pizza {
         }
     }
 
-    public boolean AddIngradient(String IngradientName, Integer gramms) {
+    public boolean AddIngredient(String ingredientName, Integer gramms) {
         if (ves + gramms <= maxVes) {
-            Ingredients.add(new Pair<>(IngradientName, gramms));
+            Ingredients.add(new Pair<>(ingredientName, gramms));
             ves += gramms;
             return true;
         } else return false;
     }
 
-    public void setTesto(testoType testo) {
-        this.testo = testo;
+    public void cleanup(){
+        Ingredients.clear();
+        switch (testo) {
+            case classic -> {
+                ves = 200;
+                break;
+            }
+            case italian -> {
+                ves = 130;
+                break;
+            }
+            case sausage -> {
+                ves = 340;
+                break;
+            }
+            case italCheese -> {
+                ves = 186;
+                break;
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + testo);
+        }
+        System.out.println("Ваша пицца очищена.");
     }
 
     public Integer getVes() {

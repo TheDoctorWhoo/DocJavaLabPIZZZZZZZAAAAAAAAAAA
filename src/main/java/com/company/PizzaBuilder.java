@@ -1,4 +1,4 @@
-package main.java.com.company;
+package com.company;
 
 public class PizzaBuilder {
     private Pizza myPizza;
@@ -9,7 +9,7 @@ public class PizzaBuilder {
     }
     public void AddSmthToMyPiza(String Name, Integer howMuch) throws TooMuchWeightException, YouHaventChosenTestoException {
         if(testoSet){
-            if(!myPizza.AddIngradient(Name, howMuch*58)){//each portion = 58gr
+            if(!myPizza.AddIngredient(Name, howMuch*58)){//each portion = 58gr
                 throw new TooMuchWeightException();
             }else{
                 System.out.println("Вес вашей пиццы составляет: "+myPizza.getVes());
@@ -18,7 +18,9 @@ public class PizzaBuilder {
             throw new YouHaventChosenTestoException();
         }
     }
-
+    public void clean(){
+        myPizza.cleanup();
+    }
     @Override
     public String toString() {
         return myPizza.toString();

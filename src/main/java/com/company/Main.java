@@ -1,4 +1,4 @@
-package main.java.com.company;
+package com.company;
 
 public class Main {
 
@@ -6,7 +6,7 @@ public class Main {
         PizzaBuilder pizMaker = new PizzaBuilder();
         pizMaker.SetTesto(Pizza.testoType.sausage);
         try {
-            pizMaker.AddSmthToMyPiza("Колбаса", 2);
+            pizMaker.AddSmthToMyPiza("Колбаса", 25);
         } catch (TooMuchWeightException | YouHaventChosenTestoException e) {
             e.printStackTrace();
         }
