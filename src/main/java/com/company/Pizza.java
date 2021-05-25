@@ -1,12 +1,14 @@
 package com.company;
 
 import javafx.util.Pair;
+import lombok.Getter;
+
 import java.util.ArrayList;
 
-public class Pizza<pubilic> {
+public class Pizza{
     private testoType testo;
     private ArrayList<Pair<String, Integer>> Ingredients;
-    private Integer ves;
+    @Getter private Integer Ves;
     private Integer maxVes;
 
     public Pizza(testoType testo) {
@@ -15,19 +17,19 @@ public class Pizza<pubilic> {
         maxVes = 1276;
         switch (testo) {
             case classic -> {
-                ves = 200;
+                Ves = 200;
                 break;
             }
             case italian -> {
-                ves = 130;
+                Ves = 130;
                 break;
             }
             case sausage -> {
-                ves = 340;
+                Ves = 340;
                 break;
             }
             case italCheese -> {
-                ves = 186;
+                Ves = 186;
                 break;
             }
             default -> throw new IllegalStateException("Unexpected value: " + testo);
@@ -35,9 +37,9 @@ public class Pizza<pubilic> {
     }
 
     public boolean AddIngredient(String ingredientName, Integer gramms) {
-        if (ves + gramms <= maxVes) {
+        if (Ves + gramms <= maxVes) {
             Ingredients.add(new Pair<>(ingredientName, gramms));
-            ves += gramms;
+            Ves += gramms;
             return true;
         } else return false;
     }
@@ -46,19 +48,19 @@ public class Pizza<pubilic> {
         Ingredients.clear();
         switch (testo) {
             case classic -> {
-                ves = 200;
+                Ves = 200;
                 break;
             }
             case italian -> {
-                ves = 130;
+                Ves = 130;
                 break;
             }
             case sausage -> {
-                ves = 340;
+                Ves = 340;
                 break;
             }
             case italCheese -> {
-                ves = 186;
+                Ves = 186;
                 break;
             }
             default -> throw new IllegalStateException("Unexpected value: " + testo);
@@ -66,15 +68,11 @@ public class Pizza<pubilic> {
         System.out.println("Ваша пицца очищена.");
     }
 
-    public Integer getVes() {
-        return ves;
-    }
-
     @Override
     public String toString() {
         return "Тесто:" + testo +
                 ",\nИнгредиенты: " + Ingredients +
-                ",\nИтоговый вес пиццы: " + ves +
+                ",\nИтоговый вес пиццы: " + Ves +
                 "\nПриятного аппетита! Приходите еще!";
     }
     public enum testoType {

@@ -6,25 +6,25 @@ public class Main {
         PizzaBuilder pizMaker = new PizzaBuilder();
         pizMaker.SetTesto(Pizza.testoType.sausage);
         try {
-            pizMaker.AddSmthToMyPiza("Колбаса", 25);
+            pizMaker.AddSmthToMyPiza("Sausage", 2);
         } catch (TooMuchWeightException | YouHaventChosenTestoException e) {
             e.printStackTrace();
         }
         try {
-            pizMaker.AddSmthToMyPiza("Сыр", 3);
+            pizMaker.AddSmthToMyPiza("Cheese", 3);
         } catch (YouHaventChosenTestoException | TooMuchWeightException e) {
             e.printStackTrace();
         }
         try {
-            pizMaker.AddSmthToMyPiza("Грибы", 3);
+            pizMaker.AddSmthToMyPiza("Mushrooms", 3);
         } catch (YouHaventChosenTestoException | TooMuchWeightException e) {
             e.printStackTrace();
         }
         try {
-            pizMaker.AddSmthToMyPiza("лук", 1);
+            pizMaker.AddSmthToMyPiza("Onion", 1);
         } catch (YouHaventChosenTestoException | TooMuchWeightException e) {
             e.printStackTrace();
         }
-        System.out.println("Ваша пицца: " + pizMaker.toString());
+        System.out.println("Your pizza: " + pizMaker.toString());
     }
 }
