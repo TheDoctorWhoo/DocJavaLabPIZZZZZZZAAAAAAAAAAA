@@ -7,20 +7,8 @@ public class Main {
         pizMaker.SetTesto(Pizza.testoType.sausage);
         try {
             pizMaker.AddSmthToMyPiza("Sausage", 2);
-        } catch (TooMuchWeightException | YouHaventChosenTestoException e) {
-            e.printStackTrace();
-        }
-        try {
             pizMaker.AddSmthToMyPiza("Cheese", 3);
-        } catch (YouHaventChosenTestoException | TooMuchWeightException e) {
-            e.printStackTrace();
-        }
-        try {
             pizMaker.AddSmthToMyPiza("Mushrooms", 3);
-        } catch (YouHaventChosenTestoException | TooMuchWeightException e) {
-            e.printStackTrace();
-        }
-        try {
             pizMaker.AddSmthToMyPiza("Onion", 1);
         } catch (YouHaventChosenTestoException | TooMuchWeightException e) {
             e.printStackTrace();
