@@ -6,7 +6,7 @@ import lombok.Getter;
 import java.util.ArrayList;
 
 public class Pizza{
-    private testoType testo;
+    private final testoType testo;
     private ArrayList<Pair<String, Integer>> Ingredients;
     @Getter private Integer Ves;
     private Integer maxVes;
